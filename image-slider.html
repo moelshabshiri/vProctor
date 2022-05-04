@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     body{
+            background-color: rgb(58, 58, 58);
+            margin-top: 100px;
+        }
+   .carousel-container {
+  width: 600px;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+  
+}
+
+.navigation .prev {
+  position: absolute;
+  z-index: 10;
+  font-size: 25px;
+  top: 40%;
+  left: 10px;
+  font-weight: 700;
+}
+.navigation .next {
+  right: 10px;
+  position: absolute;
+  font-size: 25px;
+  z-index: 10;
+  top: 40%;
+}
+.navigation .nav-btn {
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+.navigation .nav-btn:hover {
+  background: white;
+}
+
+.carousel {
+  margin-top: 20px;
+  transition: all 0.3s ease;
+ 
+}
+.carousel img {
+  width: 100%;
+  transition: all 0.3s ease;
+  border:8px solid white;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  width: 103%;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background: rgba(0, 0, 0, 0.3);
+  height: 35px;
+}
+
+.item {
+  position: absolute;
+  display: none;
+}
+
+.main {
+  display: block;
+}
+
+    </style>
+</head>
+<body>
+  <div class="carousel-container">
+    <div class="navigation">
+      <div class="prev nav-btn"><</div>
+      <div class="next nav-btn">></div>
+    </div>
+    <div class="carousel">
+      <div class="item1">
+        <img id="it1" src="" alt="mountain" />
+      </div>
+  <div class="item2">
+        <img  id="it2" src="" alt="beach" />
+      </div>
+      <div class="item3">
+        <img id="it3" src="" alt="cityscape" />
+      </div>      
+    </div>
+  </div>
+  <script>
+  const prev = document.querySelector('.prev');
+ const next = document.querySelector('.next');
+
+ const images = document.querySelector('.carousel').children;
+
+let index = 0;
+
+fetch('http://classroommonitoring.herokuapp.com/api/user/get_frames_links/1')
+     .then(response => response.json())
+    .then(json =>{
+      let can = document.getElementsByClassName('item');
+      let cnt=json.data;
+
+        document.getElementById("it1").src=json.data[0];
+        document.getElementById("it2").src=json.data[1];
+
+        document.getElementById("it3").src=json.data[2]; 
+ 
+      });
+  
+
+
+  // function nextImage(direction) {
+  // if(direction == 'next') {
+  //   index++;  // increase by 1, Global variable
+  //   if(index == 30) {
+  //     index = 0;
+  //   }
+  // } else {
+  //   if(index == 0) {
+  //     index = 30 - 1;
+  //   } else {
+  //     index--; // Backwards by 1
+  //   }
+  // }
+  
+//   for(let i = 0; i < cnt.length; i++) {
+//     images[i].classList.remove('main');
+//   }
+//   images[index].classList.add('main');
+// }
+
+// prev.addEventListener('click', () => {
+//   nextImage('next');
+// })
+// next.addEventListener('click', () => {
+//   nextImage('prev');
+// })
+  </script>
+</body>
+</html>

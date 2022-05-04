@@ -1,0 +1,68 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+/* body{
+  
+    margin: 0;
+    padding: 0;
+    /* background: linear-gradient(10deg,#fdfbfb, #ebedee83); */
+    /* background-image: url('examBG.png'); */
+    /* background-repeat: no-repeat; */
+   /* height: 100vh; 
+    overflow: hidden;
+  }   */
+  #head {
+    padding: 70px;
+    text-align: center;
+    background: #2a7c6f;
+    color: black;
+  }
+  .center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 8px 10px 15px 9px rgba(0,0,0,0.1);
+  }
+
+  h1{
+
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid silver;
+
+  }
+form{
+
+    text-align: center;
+}
+input[type="submit"]{
+    height: 50px;
+    padding-left: 70px;
+    padding-right: 70px;
+    margin-left: 10px;
+    border: 1px solid;
+    margin-bottom: 40px;
+    background:#269482;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+  }
+
+  input[type="submit"]:hover
+  {    background:#2a7c6f;
+
+
+  }
